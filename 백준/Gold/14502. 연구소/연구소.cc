@@ -9,6 +9,7 @@ typedef struct {
 }Position;
 
 const Position moveset[4] = { {0,1},{1,0},{-1,0},{0,-1} };
+
 int map[8][8] = {};
 int n, m;
 vector<Position> virus;
@@ -38,11 +39,16 @@ int bfs() {
 				}
 			}
 		}
+
 	}
 	return safeArea - 3;
 }
 
 int main() {
+
+	ios_base::sync_with_stdio(false);
+	cin.tie(nullptr);
+
 	cin >> n >> m;
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < m; j++) {
