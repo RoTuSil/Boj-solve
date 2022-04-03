@@ -5,29 +5,23 @@ int n;
 int skill[20][20];
 int teamA[10];
 int teamB[10];
-int submin=10000;
+int submin = 10000;
 bool teamSelected[20] = {};
 
 int getskillSub() {
-	int teamAscore = 0;
-	int teamBscore = 0;
+	int teamscore = 0;
 	for (int i = 0; i < n / 2; i++) {
 		for (int j = i + 1; j < n / 2; j++) {
-			teamAscore += skill[teamA[i]][teamA[j]];
-			teamAscore += skill[teamA[j]][teamA[i]];
-		}
-	}for (int i = 0; i < n / 2; i++) {
-		for (int j = i + 1; j < n / 2; j++) {
-			teamBscore += skill[teamB[i]][teamB[j]];
-			teamBscore += skill[teamB[j]][teamB[i]];
+			teamscore += skill[teamA[i]][teamA[j]] + skill[teamA[j]][teamA[i]];
+			teamscore -= skill[teamB[i]][teamB[j]] + skill[teamB[j]][teamB[i]];
 		}
 	}
-	return abs(teamAscore - teamBscore);
+	return abs(teamscore);
 }
 
-void makeTeam(int depth,int lastindex) {
+void makeTeam(int depth, int lastindex) {
 	if (depth == n / 2) {
-		for (int i = 0,idx = 0; i < n; i++) {
+		for (int i = 0, idx = 0; i < n; i++) {
 			if (!teamSelected[i])
 				teamB[idx++] = i;
 		}
