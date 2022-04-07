@@ -13,7 +13,7 @@ int main() {
 		cin >> command;
 		cin >> len;
 		cin >> s;
-		for (int i = 0, num = 0, digit = 1, index = 0; i < s.length(); i++) {
+		for (int i = 0, num = 0, index = 0; i < s.length(); i++) {
 			if (s[i] >= '0' && s[i] <= '9') {
 				num *= 10;
 				num += s[i] - '0';
@@ -22,7 +22,6 @@ int main() {
 			if (s[i] == ']' || s[i] == ',') {
 				arr[index++] = num;
 				num = 0;
-				digit = 1;
 			}
 		}
 		int front = 0, back = len;
