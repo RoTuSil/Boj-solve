@@ -4,6 +4,10 @@
 #include <algorithm>
 using namespace std;
 int main() {
+	ios::sync_with_stdio(0);
+	cin.tie(nullptr);
+	cout.tie(nullptr);
+
 	map<string, int> nosee;
 	vector<string> noHearNoSee;
 	string name;
