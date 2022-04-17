@@ -1,5 +1,6 @@
 #include <iostream>
 #include <stack>
+#include <string>
 using namespace std;
 
 int arr[500001];
@@ -7,24 +8,24 @@ stack<int> s;
 
 int main() {
 	ios::sync_with_stdio(0);
-	cin.tie(NULL);
-	cout.tie(NULL);
+	cin.tie(0);
+	cout.tie(0);
 	int n;
+	string ans="";
 	cin >> n;
 	for (int i = 1; i <= n; i++) {
 		cin >> arr[i];
 		while (true) {
 			if (s.empty()) {
-				cout << "0 ";
+				ans += "0 ";
 				break;
 			}
 			if (arr[s.top()] > arr[i]) {
-				cout << s.top() << " ";
+				ans += to_string(s.top()) + " ";
 				break;
-			}
-			if (arr[s.top()] < arr[i])
-				s.pop();
+			}else s.pop();
 		}
 		s.push(i);
 	}
+	cout << ans;
 }
