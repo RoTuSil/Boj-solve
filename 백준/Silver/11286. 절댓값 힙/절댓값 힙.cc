@@ -2,24 +2,17 @@
 #include <queue>
 using namespace std;
 
-struct absInt {
-	int x;
-	bool operator> (const absInt& target) const {
-		if (abs(target.x) == abs(x)) {
-			return x < target.x;
-		} else return abs(x) < abs(target.x);
-	}
-	bool operator< (const absInt& target) const {
-		if (abs(target.x) == abs(x)) {
-			return x > target.x;
-		} else return abs(x) > abs(target.x);
+struct compare {
+	bool operator()(int a, int b) {
+		if (abs(a) == abs(b)) return a > b;
+		else return abs(a) > abs(b);
 	}
 };
 
 int main() {
 	ios::sync_with_stdio(0);
 	cin.tie(nullptr);
-	priority_queue<absInt> pq;
+	priority_queue<int,vector<int>,compare> pq;
 	int n;
 	cin >> n;
 	for (int i = 0; i < n; i++) {
@@ -28,11 +21,9 @@ int main() {
 		if (!x) {
 			if (pq.empty()) cout << "0\n";
 			else {
-				cout << pq.top().x << "\n";
+				cout << pq.top() << "\n";
 				pq.pop();
 			}
-		} else {
-			pq.push({x});
-		}
+		} else pq.push(x);
 	}
 }
