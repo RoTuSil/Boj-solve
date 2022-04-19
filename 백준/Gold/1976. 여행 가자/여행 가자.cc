@@ -3,6 +3,8 @@
 using namespace std;
 
 int main() {
+	ios::sync_with_stdio(0);
+	cin.tie(0);
 	vector<int> connections[201];
 	int plan[1000] = {};
 	queue<int> q;
@@ -43,11 +45,10 @@ int main() {
 				}
 			}
 		}
-		if (found == false) {
+		if (!found) {
 			cout << "NO";
 			return 0;
 		}
 	}
 	cout << "YES";
-	
 }
