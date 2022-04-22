@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <stack>
 using namespace std;
 
@@ -28,8 +29,10 @@ int main() {
 		}
 		nge.push(arr[i]);
 	}
+	string finalAnswer="";
 	while (!answer.empty()) {
-		cout << answer.top() << " ";
+		finalAnswer += to_string(answer.top()) + " ";
 		answer.pop();
 	}
+	cout << finalAnswer;
 }
