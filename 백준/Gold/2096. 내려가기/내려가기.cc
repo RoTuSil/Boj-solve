@@ -6,6 +6,8 @@ int mindp[2][3];
 int game[100001][3];
 
 int main() {
+	ios::sync_with_stdio(0);
+	cin.tie(0);
 	int n;
 	cin >> n;
 	for (int i = 1; i <= n; i++) {
@@ -27,7 +29,6 @@ int main() {
 		mindp[0][0] = mindp[1][0];
 		mindp[0][1] = mindp[1][1];
 		mindp[0][2] = mindp[1][2];
-
 	} 
  
 	cout << max(maxdp[0][0], max(maxdp[0][1], maxdp[0][2]));
