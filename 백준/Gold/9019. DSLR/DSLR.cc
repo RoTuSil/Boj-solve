@@ -12,23 +12,11 @@ int S(int n) {
 }
 
 int L(int n) {
-	int digit[4]{};
-	digit[0] = n / 1000;
-	digit[1] = (n % 1000) / 100;
-	digit[2] = (n % 100) / 10;
-	digit[3] = (n % 10);
-	int newN = digit[1] * 1000 + digit[2] * 100 + digit[3] * 10 + digit[0];
-	return newN;
+	return n % 1000 * 10 + n / 1000;
 }
 
 int R(int n) {
-	int digit[4]{};
-	digit[0] = n / 1000;
-	digit[1] = (n % 1000) / 100;
-	digit[2] = (n % 100) / 10;
-	digit[3] = (n % 10);
-	int newN = digit[3] * 1000 + digit[0] * 100 + digit[1] * 10 + digit[2];
-	return newN;
+	return n / 10 + n % 10 * 1000;
 }
 
 struct element {
