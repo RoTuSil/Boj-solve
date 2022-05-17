@@ -10,6 +10,7 @@ bool visited[300001];
 int main() {
 	ios::sync_with_stdio(0);
 	cin.tie(0);
+	cout.tie(0);
 	int city, road, pathLength, startCity;
 	vector<int> foundCity;
 	bool cityFound = false;
@@ -44,8 +45,8 @@ int main() {
 	}
 	if (cityFound) {
 		sort(foundCity.begin(), foundCity.end());
-		for (int i = 0; i < foundCity.size(); i++) {
-			cout << foundCity[i] << "\n";
+		for (int i : foundCity) {
+			cout << i << "\n";
 		}
 		return 0;
 	}
