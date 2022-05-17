@@ -8,6 +8,8 @@ queue<int> q;
 bool visited[300001];
 
 int main() {
+	ios::sync_with_stdio(0);
+	cin.tie(0);
 	int city, road, pathLength, startCity;
 	vector<int> foundCity;
 	bool cityFound = false;
