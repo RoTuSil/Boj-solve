@@ -10,8 +10,15 @@ struct hns {
 int main() {
 	int n, k;
 	deque<hns> q;
-	bool map[100001]{};
+	int map[100001];
+	for (int i = 0; i < 100001; i++) {
+		map[i] = -1;
+	}
 	cin >> n >> k;
+	if (n == k) {
+		cout << 0;
+		return 0;
+	}
 	map[n] = true;
 	q.push_back({ n,0 });
 	while (!q.empty()) {
@@ -20,25 +27,34 @@ int main() {
 			hns now = q.front();
 			q.pop_front();
 			if (now.pos == k) {
-				cout << now.time;
+				cout << map[k];
 				return 0;
 			}
 			if (now.pos * 2 <= 100000) {
-				if (!map[now.pos * 2]) {
+				if (map[now.pos * 2] == -1) {
 					q.push_front({ now.pos * 2,now.time });
-					map[now.pos * 2] = true;
+					map[now.pos * 2] = now.time;
+				}
+				else if (map[now.pos * 2] > now.time) {
+					map[now.pos * 2] = now.time;
 				}
 			}
 			if (now.pos + 1 <= 100000) {
-				if (!map[now.pos + 1]) {
+				if (map[now.pos + 1] == -1) {
 					q.push_back({ now.pos + 1 ,now.time + 1 });
-					map[now.pos + 1] = true;
+					map[now.pos + 1] = now.time+1;
+				}
+				else if (map[now.pos + 1] > now.time + 1) {
+					map[now.pos + 1] = now.time+1;
 				}
 			}
 			if (now.pos - 1 >= 0) {
-				if (!map[now.pos - 1]) {
+				if (map[now.pos - 1] == -1) {
 					q.push_back({ now.pos - 1, now.time + 1 });
-					map[now.pos - 1] = true;
+					map[now.pos - 1] = now.time+1;
+				}
+				else if (map[now.pos - 1] > now.time + 1) {
+					map[now.pos - 1] = now.time+1;
 				}
 			}
 		}
