@@ -4,7 +4,7 @@
 
 ### 성능 요약
 
-메모리: 6580 KB, 시간: 100 ms
+메모리: 6588 KB, 시간: 36 ms
 
 ### 분류
 
@@ -12,7 +12,7 @@
 
 ### 제출 일자
 
-2024년 3월 20일 17:20:48
+2024년 3월 20일 17:22:53
 
 ### 문제 설명
 
@@ -20,7 +20,7 @@
 
 <p>도로의 각 칸에는 점프대가 설치되어 있을 수 있다. <em>i(1 ≤ i ≤ N)</em>번 칸에 설치된 점프대의 높이를 <em>h<sub>i</sub></em>라고 하자. 높이가 <em>h<sub>i</sub></em>인 점프대를 밟으면 그 어떤 요인과도 관계없이 다음 <em>h<sub>i</sub></em>칸 위를 비행한 뒤 그다음 칸에 착지한다. 다음 예시를 확인해 보자.</p>
 
-<p style="text-align: center;"><img alt="" src="" style="height: 149px; width: 640px;"></p>
+<p style="text-align: center;"><img alt="" src="https://upload.acmicpc.net/0dce84cd-42a2-47f2-9052-404dc651145a/-/preview/" style="height: 149px; width: 640px;"></p>
 
 <p>자전거를 타고 1번 칸에서 출발해 앞으로 달리면 다음과 같은 일들이 순서대로 일어난다.</p>
 
